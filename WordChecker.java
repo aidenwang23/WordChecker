@@ -2,9 +2,8 @@ public class WordChecker
 {
     /** Initialized in the constructor and contains no null elements */
     private ArrayList<String> wordList;
-    private int i;
 
-    public void wordChecker(ArrayList<String> words)
+    public wordChecker(ArrayList<String> words)
     {
         wordList = words;
     }
