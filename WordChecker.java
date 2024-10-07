@@ -1,11 +1,11 @@
+import java.util.ArrayList;
 public class WordChecker 
 {
     /** Initialized in the constructor and contains no null elements */
     private ArrayList<String> wordList;
 
-    public wordChecker(ArrayList<String> words)
+    public WordChecker() 
     {
-        wordList = words;
     }
 
     /**
@@ -17,7 +17,7 @@ public class WordChecker
      */
     public boolean isWordChain() 
     {
-        if (wordList.length()>=2)
+        if (wordList.size()>=2)
         {
             return true;
         }
@@ -33,8 +33,8 @@ public class WordChecker
      * Items appear in the returned list in the same order as they appear in
      * wordList.
      */
-    public ArrayList<String> createList(String target) 
-    {
-        /* to be implemented in part (b) */ 
-    }
+    // public ArrayList<String> createList(String target) 
+    // {
+    //     /* to be implemented in part (b) */ 
+    // }
 }
