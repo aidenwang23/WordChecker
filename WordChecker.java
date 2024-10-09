@@ -3,9 +3,15 @@ public class WordChecker
 {
     /** Initialized in the constructor and contains no null elements */
     private ArrayList<String> wordList;
-
-    public WordChecker() 
+    
+    public WordChecker()
     {
+        wordList = new ArrayList<String>();
+    }
+
+    public WordChecker(ArrayList<String> list) 
+    {
+        wordList = list;
     }
 
     /**
@@ -17,11 +23,14 @@ public class WordChecker
      */
     public boolean isWordChain() 
     {
-        if (wordList.size()>=2)
+        boolean wordChain = true;
+        for(int i = 1; i < wordList.size(); i++)
         {
-            return true;
+            String after = wordList.get(i);
+            String before = wordList.get(i - 1);
+            if(after.indexOf(before) < 0) return false;
         }
-        return false;
+        return wordChain;
     }
 
     /**
@@ -33,8 +42,31 @@ public class WordChecker
      * Items appear in the returned list in the same order as they appear in
      * wordList.
      */
-    // public ArrayList<String> createList(String target) 
-    // {
-    //     /* to be implemented in part (b) */ 
-    // }
+    public ArrayList<String> createList(String target) 
+    {
+        ArrayList<String> list = new ArrayList<String>();
+        int length = target.length();
+        String word;
+        String addWord;
+        for(int i = 0; i < wordList.size(); i++)
+        {
+            word = wordList.get(i);
+            addWord = word;
+            if(word.length()>=length)
+            {
+                if(word.substring(0,length) == target)
+                {
+                    if(length == word.length())
+                    {
+                        list.add(" ");
+                    }
+                    else
+                    {
+                        list.add(addWord.substring(length,addWord.length()-1));
+                    }
+                }
+            }
+        }
+        return list;
+    }
 }
