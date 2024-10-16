@@ -51,18 +51,19 @@ public class WordChecker
         for(int i = 0; i < wordList.size(); i++)
         {
             word = wordList.get(i);
-            addWord = word;
             if(word.length()>=length)
             {
-                if(word.substring(0,length) == target)
+                // System.out.println(word.substring(0,length));
+                if(word.substring(0,length).equals(target))
                 {
-                    if(length == word.length())
+                    if(word == target)
                     {
                         list.add(" ");
                     }
                     else
                     {
-                        list.add(addWord.substring(length,addWord.length()-1));
+                        addWord = word.substring(length);
+                        list.add(addWord);
                     }
                 }
             }
