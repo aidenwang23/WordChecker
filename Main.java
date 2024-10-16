@@ -22,7 +22,6 @@ public class Main
         WordChecker b = new WordChecker(words);
         info = b.isWordChain();
         System.out.println(info);
-
         words.clear();
         words.add("catch");
         words.add("bobcat");
